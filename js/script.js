@@ -126,7 +126,7 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   this.getDateLabel = function() {
     if (this.mostRecent === undefined) {
-	return this.getRemark() + "不明";
+	return this.getRemark() + "収集しません";
     }
     var result_text = this.mostRecent.getFullYear() + "/" + (1 + this.mostRecent.getMonth()) + "/" + this.mostRecent.getDate();
     return this.getRemark() + this.dayLabel + " " + result_text;
@@ -541,7 +541,7 @@ $(function() {
           //あと何日かを計算する処理です。
           var leftDayText = "";
 	  if (trash.mostRecent === undefined) {
-	    leftDayText == "不明";
+	    leftDayText == "収集しません";
 	  } else {
             var leftDay = Math.ceil((trash.mostRecent.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
 
